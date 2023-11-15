@@ -1,15 +1,13 @@
-type PetType = {
-  name: string;
-  age: number;
-  breed: string;
-};
+import { PetType } from "../type";
 
 function Pet(props: PetType) {
+  const { name, breed, city } = props;
+
   return (
     <div>
-      <h3>{props.name}</h3>
-      <p>{props.breed}</p>
-      <p>{props.age}</p>
+      <h3>{name}</h3>
+      <p>{breed}</p>
+      <p>{city}</p>
     </div>
   );
 }

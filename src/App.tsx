@@ -1,14 +1,19 @@
-import Pet from "./components/Pet";
+import Searchbar from "./pages/Searchbar";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DetailsPage from "./pages/Details";
 
 function App() {
-  const title = "Pet Adoption";
   return (
-    <div>
-      <h1>{title}</h1>
-      <Pet name="Becky" age={4} breed="Indie" />
-      <Pet name="Randy" age={2} breed="Golden Retriever" />
-      <Pet name="Milky" age={3} breed="Indie" />
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1>Adopt Me!</h1>
+        <Routes>
+          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/search" element={<Searchbar />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
